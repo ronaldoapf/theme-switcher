@@ -23,10 +23,10 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"]
     },
-    "files": [
-      "src/styles/styled.d.ts"
-    ]
   },
+  "files": [
+    "src/styles/styled.d.ts"
+  ],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
