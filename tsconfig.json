@@ -17,12 +17,14 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
       "@common/*": ["src/common/*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"]
     },
+    "strictPropertyInitialization": false
   },
   "files": [
     "src/styles/styled.d.ts"

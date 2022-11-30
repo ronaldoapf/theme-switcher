@@ -14,11 +14,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@styles': resolve(__dirname, 'src', 'styles'),
       '@pages': resolve(__dirname, 'src', 'pages'),
+      '@hooks': resolve(__dirname, 'src', 'hooks'),
+      '@styles': resolve(__dirname, 'src', 'styles'),
       '@assets': resolve(__dirname, 'src', 'assets'),
       '@common': resolve(__dirname, 'src', 'common'),
       '@components': resolve(__dirname, 'src', 'components'),
+
     }
   }
 });

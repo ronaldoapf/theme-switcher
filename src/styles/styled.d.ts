@@ -7,7 +7,9 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       background: string;
+      backgroundNavbar: string;
       text: string;
+      textPrimary: string;
     }
   }
-}
+}rgb(249, 250, 251)

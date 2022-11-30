@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 14px;
     font-family: sans-serif;
-    color: ${props => props.theme.colors.text};
     background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.title === 'light' ? props.theme.colors.textPrimary : props.theme.colors.text};
   }
 
   .container {
