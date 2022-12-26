@@ -1,26 +1,24 @@
 import { axiosClient } from "..";
-import { useMutation } from "@tanstack/react-query";
-import { ListChatbotsParams } from "./types/request";
+import { ListChatbotsParams, ProductSearchParams } from "./types/request";
+import { ListChatbotsResponse } from "./types/response";
+import { useMutationBase } from "./base";
 
 const prefix = '/chat-bot';
 
-type UseMutationFn<TParams, TResponse> = (body?: TParams) => TResponse
+async function listChatbots(body?: ListChatbotsParams) {
+  const { data } = await axiosClient.post(`${prefix}/index`, body);
+  return data;
+}
 
-export function useMutationBase<TParams, TResponse = any>(fn: UseMutationFn<TParams, TResponse>, key: string) {
-  const { mutateAsync, isLoading, data, error } = useMutation({
-    mutationFn: fn,
-    mutationKey: [key],
-  })
-
-  return [mutateAsync, data, isLoading, error];
+async function productSearch(body?: ProductSearchParams) {
+  const { data } = await axiosClient.post(`${prefix}/productsearch`, body);
+  return data;
 }
 
 export function useListChatbots() {
-  return useMutationBase(listChatbots, 'list-chatbots')
+  return useMutationBase<ListChatbotsParams, ListChatbotsResponse>(listChatbots, 'list-chatbots')
 }
 
-async function listChatbots(body?: ListChatbotsParams) {
-  console.log(body)
-  const { data } = await axiosClient.post(`${prefix}/index`, body);
-  return data;
+export function useProductSearch() {
+  return useMutationBase<ProductSearchParams>(productSearch, 'product-search')
 }

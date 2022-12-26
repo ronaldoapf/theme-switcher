@@ -12,7 +12,7 @@ import light from '@styles/themes/light';
 
 export const ThemeContext = createContext<ThemeProviderType>({} as ThemeProviderType);
 
-const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   const [mode, setMode] = useState(() => localStorage.getItem('theme') || 'light');
 

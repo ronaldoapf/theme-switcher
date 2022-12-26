@@ -4,3 +4,9 @@ export interface ListChatbotsParams {
   enable?: boolean;
   chatbotCode?: string;
 }
+
+export interface ProductSearchParams {
+  search: string;
+  chatId: string;
+  productsQuantity?: number;
+}

@@ -13,5 +13,11 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   padding: 10px;
-  
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .2s ease-in-out;
+
+  &:hover {
+    background-color: #eaeaea;
+  } 
 `;
